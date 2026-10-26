@@ -4,6 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="theme-color" content="#123b32">
+<link rel="manifest" href="./manifest.webmanifest">
+<link rel="icon" href="./icon.svg" type="image/svg+xml">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="Pancham Inventory">
 <title>Pancham Hardware & Electricals</title>
 <style>
 :root{--bg:#f4f7f5;--panel:#fff;--text:#17231f;--muted:#65736d;--line:#dce5df;--accent:#176b52;--accent2:#e1f2e9;--danger:#b42318;--shadow:0 8px 24px #173b2b0d}
@@ -115,6 +120,13 @@ async function restoreFromDrive(){if(!confirm('Restore from Google Drive? This w
 $('driveBackup').addEventListener('click',backupToDrive);$('driveRestore').addEventListener('click',restoreFromDrive);
 $('googleDisconnect').addEventListener('click',()=>{if(driveToken&&window.google?.accounts?.oauth2)google.accounts.oauth2.revoke(driveToken,()=>{});driveToken='';tokenExpiry=0;driveButtons(false);driveStatus('Signed out. Sign in again to use Google Drive backup.')});
 readProducts();renderAll();lockState();
+</script>
+
+<script>
+// Installable/offline support. The service worker caches the app shell; inventory remains in this device's local storage.
+if ('serviceWorker' in navigator && (location.protocol === 'https:' || location.hostname === 'localhost')) {
+  window.addEventListener('load', () => { navigator.serviceWorker.register('./service-worker.js').catch(err => console.warn('Offline setup failed:', err)); });
+}
 </script>
 </body>
 </html>
