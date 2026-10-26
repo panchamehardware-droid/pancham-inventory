@@ -1,0 +1,14 @@
+{
+  "id": "./",
+  "name": "Pancham Hardware & Electricals Inventory",
+  "short_name": "Pancham Stock",
+  "description": "Inventory manager for Pancham Hardware & Electricals",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#f4f7f5",
+  "theme_color": "#123b32",
+  "icons": [
+    { "src": "./icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any maskable" }
+  ]
+}
