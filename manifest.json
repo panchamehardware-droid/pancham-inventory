@@ -1,0 +1,12 @@
+{
+  "name": "Pancham Hardware and Electricals Inventory",
+  "short_name": "Pancham Inventory",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#f4f6f2",
+  "theme_color": "#09271d",
+  "description": "Offline inventory manager for Pancham Hardware and Electricals",
+  "icons": [
+    { "src": "logo.png", "sizes": "512x512", "type": "image/png", "purpose": "any maskable" }
+  ]
+}
